@@ -21,10 +21,10 @@ public class PlayerController : MonoBehaviour {
 
     void FixedUpdate()
     {
-        float moveHorizantal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
+        //float moveHorizantal = Input.GetAxis("Horizontal");
+        //float moveVertical = Input.GetAxis("Vertical");
 
-        Vector3 movement = new Vector3(moveHorizantal, 0.0f, moveVertical);
+        Vector3 movement = new Vector3(Input.acceleration.x, 0.0f, -Input.acceleration.z);
         rb.AddForce(movement * speed);
     }
 
